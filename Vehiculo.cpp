@@ -22,72 +22,72 @@ Procesos * Vehiculo::establecerOrden(int i) {
 
         case 1:
 
-            temp->addF("A",2);
-            temp->addF("B",2);
-            temp->addF("C",4);
-            temp->addF("D",1);
-            temp->addF("E",3);
-            temp->addF("F",1);
+            temp->add("A",2);
+            temp->add("B",2);
+            temp->add("C",4);
+            temp->add("D",1);
+            temp->add("E",3);
+            temp->add("F",1);
             //temp->verProcesos();
 
             break;
 
         case 2:
 
-            temp->addF("C",2);
-            temp->addF("A",1);
-            temp->addF("B",1);
-            temp->addF("E",2);
-            temp->addF("D",3);
-            temp->addF("F",1);
+            temp->add("C",2);
+            temp->add("A",1);
+            temp->add("B",1);
+            temp->add("E",2);
+            temp->add("D",3);
+            temp->add("F",1);
             //temp->verProcesos();
 
             break;
 
         case 3:
 
-            temp->addF("D",1);
-            temp->addF("E",4);
-            temp->addF("A",3);
-            temp->addF("C",2);
-            temp->addF("B",1);
-            temp->addF("F",1);
+            temp->add("D",1);
+            temp->add("E",4);
+            temp->add("A",3);
+            temp->add("C",2);
+            temp->add("B",1);
+            temp->add("F",1);
             //temp->verProcesos();
 
             break;
 
         case 4:
 
-            temp->addF("B",2);
-            temp->addF("C",1);
-            temp->addF("D",4);
-            temp->addF("A",3);
-            temp->addF("F",2);
-            temp->addF("E",1);
+            temp->add("B",2);
+            temp->add("C",1);
+            temp->add("D",4);
+            temp->add("A",3);
+            temp->add("F",2);
+            temp->add("E",1);
             //temp->verProcesos();
 
             break;
 
         case 5:
 
-            temp->addF("E",1);
-            temp->addF("F",1);
-            temp->addF("B",2);
-            temp->addF("C",4);
-            temp->addF("A",1);
-            temp->addF("D",3);
+            temp->add("E",1);
+            temp->add("F",1);
+            temp->add("B",2);
+            temp->add("C",4);
+            temp->add("A",1);
+            temp->add("D",3);
             //temp->verProcesos();
 
             break;
 
         case 6:
 
-            temp->addF("F",1);
-            temp->addF("D",1);
-            temp->addF("C",2);
-            temp->addF("B",4);
-            temp->addF("E",3);
-            temp->addF("A",4);
+            temp->add("F",1);
+            temp->add("D",1);
+            temp->add("C",2);
+            temp->add("B",4);
+            temp->add("E",3);
+            temp->add("A",4);
             //temp->verProcesos();
 
             break;

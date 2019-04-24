@@ -9,7 +9,24 @@ Procesos::Procesos(){
     size = 0;
 
 }
+void Procesos::add(string s, int i){
+    ProcesoSimple *proceso = new ProcesoSimple();
+    proceso->tipoProceso = s;
+    proceso->tiempo = i;
+    proceso->next=NULL;
 
+    if(this->head == NULL){
+        //cout << "Lista vacia" << endl;
+        this->head = proceso;
+    }else{
+        ProcesoSimple *temp = head;
+        while(temp->next != NULL){
+            temp = temp->next;
+        }
+        temp->next = proceso;
+    }
+
+}
 void Procesos::addF(string s, int i) {
 
     ProcesoSimple *proceso = new ProcesoSimple();

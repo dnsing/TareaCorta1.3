@@ -20,30 +20,59 @@ Fabrica::Fabrica(){
 }
 
 void Fabrica::lineaGeneral(Vehiculo *v, Vehiculo *v1, Vehiculo *v2, Vehiculo *v3, Vehiculo *v4, Vehiculo *v5) {
-    this->lineaProduccionGeneral->addfirst(v);
-    this->lineaProduccionGeneral->addfirst(v1);
-    this->lineaProduccionGeneral->addfirst(v2);
-    this->lineaProduccionGeneral->addfirst(v3);
-    this->lineaProduccionGeneral->addfirst(v4);
-    this->lineaProduccionGeneral->addfirst(v5);
+    this->lineaProduccionGeneral->add(v);
+    this->lineaProduccionGeneral->add(v1);
+    this->lineaProduccionGeneral->add(v2);
+    this->lineaProduccionGeneral->add(v3);
+    this->lineaProduccionGeneral->add(v4);
+    this->lineaProduccionGeneral->add(v5);
+
+    //cout << lineaProduccionGeneral->head << endl;
 
     this->StartProceso();
+    //cout << lineaProduccionGeneral->head << endl;
 
 }
 //hacer lo mismo que sucede aqui, pero para cada uno de los carros
 //borrar el codigo comentado cuando considere que ya no lo necesito
 void Fabrica::StartProceso(){
-    //lineaProduccionGeneral->getHead()->lp->head->tipoProceso;
-
-    while(lineaProduccionGeneral->getHead() != NULL){
-        if(lineaProduccionGeneral->getHead()->listaProcesos->head->tiempo != 0){
-            cout << "Tipo de proceso: " << lineaProduccionGeneral->getHead()->listaProcesos->head->tipoProceso <<
-                 " "<< lineaProduccionGeneral->getHead()->listaProcesos->head->tiempo << endl;
-            lineaProduccionGeneral->getHead()->listaProcesos->head->tiempo--;
-        }else{
-            lineaProduccionGeneral->getHead()->listaProcesos->deleteF();
-        }
+    if(lineaProduccionGeneral->head != NULL){
+        lineaProduccionGeneral->last = lineaProduccionGeneral->head;
+    }else{
+        lineaProduccionGeneral->head = lineaProduccionGeneral->head->next;
+        lineaProduccionGeneral->last = lineaProduccionGeneral->head;
     }
+
+
+    while (lineaProduccionGeneral->head != NULL) {
+        cout << "ok" << endl;
+        if (lineaProduccionGeneral->getHead()->listaProcesos->head->tiempo != 0) {
+            cout << "Tipo de proceso: " << lineaProduccionGeneral->getHead()->listaProcesos->head->tipoProceso <<
+            " " << lineaProduccionGeneral->getHead()->listaProcesos->head->tiempo << endl;
+                lineaProduccionGeneral->getHead()->listaProcesos->head->tiempo--;
+        } else {
+            lineaProduccionGeneral->getHead()->listaProcesos->deleteF();
+            if(lineaProduccionGeneral->head->listaProcesos->head == NULL){
+                cout << "listo" << endl;
+                lineaProduccionGeneral->delete_first();
+            }else{
+                cout << "Tipo de proceso: " << lineaProduccionGeneral->getHead()->listaProcesos->head->tipoProceso <<
+                     " " << lineaProduccionGeneral->getHead()->listaProcesos->head->tiempo << endl;
+                lineaProduccionGeneral->getHead()->listaProcesos->head->tiempo--;
+            }
+
+        }
+        //lineaProduccionGeneral->verProcesos();
+
+        lineaProduccionGeneral->head = lineaProduccionGeneral->head->next;
+    }
+
+    lineaProduccionGeneral->head = lineaProduccionGeneral->last;
+    cout<<"--------------------------------------------------------------" << endl;
+    if(lineaProduccionGeneral->head != NULL){
+        this->StartProceso();
+    }
+
 }
 /*
 
@@ -122,8 +151,8 @@ void Fabrica::darPrioridad(ListVehiculos *lv, Vehiculo *v){
     Vehiculo *temp = lv->getHead();
 
     lv->move_first();
-    lv->addfirst(v);
-    this->lineadeEspera->addfirst(temp);
+    lv->addF(v);
+    this->lineadeEspera->addF(temp);
     //lv->move_first();
     //lv->addfirst(v);
     cout << "Se ha realizado el cambio con éxito" << endl;

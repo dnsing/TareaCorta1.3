@@ -13,6 +13,7 @@ public:
     ProcesoSimple *head;
     int size;
     Procesos();
+    void add(string s, int i);
     void addF(string s, int i);
     void deleteF();
     void verProcesos();

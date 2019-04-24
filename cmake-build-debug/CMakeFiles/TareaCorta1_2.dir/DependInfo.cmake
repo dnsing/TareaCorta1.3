@@ -4,11 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/sing/Documents/Git/TareaCorta1.3/Fabrica.cpp" "/home/sing/Documents/Git/TareaCorta1.3/cmake-build-debug/CMakeFiles/TareaCorta1_2.dir/Fabrica.cpp.o"
-  "/home/sing/Documents/Git/TareaCorta1.3/ListVehiculos.cpp" "/home/sing/Documents/Git/TareaCorta1.3/cmake-build-debug/CMakeFiles/TareaCorta1_2.dir/ListVehiculos.cpp.o"
-  "/home/sing/Documents/Git/TareaCorta1.3/Procesos.cpp" "/home/sing/Documents/Git/TareaCorta1.3/cmake-build-debug/CMakeFiles/TareaCorta1_2.dir/Procesos.cpp.o"
-  "/home/sing/Documents/Git/TareaCorta1.3/Vehiculo.cpp" "/home/sing/Documents/Git/TareaCorta1.3/cmake-build-debug/CMakeFiles/TareaCorta1_2.dir/Vehiculo.cpp.o"
-  "/home/sing/Documents/Git/TareaCorta1.3/main.cpp" "/home/sing/Documents/Git/TareaCorta1.3/cmake-build-debug/CMakeFiles/TareaCorta1_2.dir/main.cpp.o"
+  "/home/sing/Documents/Git/TareaCorta1.2/Fabrica.cpp" "/home/sing/Documents/Git/TareaCorta1.2/cmake-build-debug/CMakeFiles/TareaCorta1_2.dir/Fabrica.cpp.o"
+  "/home/sing/Documents/Git/TareaCorta1.2/ListVehiculos.cpp" "/home/sing/Documents/Git/TareaCorta1.2/cmake-build-debug/CMakeFiles/TareaCorta1_2.dir/ListVehiculos.cpp.o"
+  "/home/sing/Documents/Git/TareaCorta1.2/Procesos.cpp" "/home/sing/Documents/Git/TareaCorta1.2/cmake-build-debug/CMakeFiles/TareaCorta1_2.dir/Procesos.cpp.o"
+  "/home/sing/Documents/Git/TareaCorta1.2/Vehiculo.cpp" "/home/sing/Documents/Git/TareaCorta1.2/cmake-build-debug/CMakeFiles/TareaCorta1_2.dir/Vehiculo.cpp.o"
+  "/home/sing/Documents/Git/TareaCorta1.2/main.cpp" "/home/sing/Documents/Git/TareaCorta1.2/cmake-build-debug/CMakeFiles/TareaCorta1_2.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -10,10 +10,11 @@
 
 class ListVehiculos {
 public:
-    Vehiculo *head;
+    Vehiculo *head, *next, *last;
     int size;
     ListVehiculos();
-    void addfirst(Vehiculo *v);
+    void add(Vehiculo *v);
+    void addF(Vehiculo *v);
     void delete_first();
     void move_first();
     void verProcesos();

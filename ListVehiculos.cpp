@@ -8,6 +8,8 @@ using namespace std;
 ListVehiculos::ListVehiculos(){
 
     head = NULL;
+    next = NULL;
+    last = NULL;
     size = 0;
 }
 
@@ -18,9 +20,24 @@ Vehiculo *ListVehiculos::getHead() const {
 void ListVehiculos::setHead(Vehiculo *head) {
     ListVehiculos::head = head;
 };
+void ListVehiculos::add(Vehiculo *v){
+    Vehiculo *vehiculo = v;
+    vehiculo->next=NULL;
 
+    if(this->head == NULL){
+        this->head = vehiculo;
+    }else{
+        Vehiculo *temp = head;
+        while(temp->next != NULL){
+            temp = temp->next;
+        }
+        temp->next = vehiculo;
+    }
+    this->size++;
 
-void ListVehiculos::addfirst(Vehiculo *v){
+}
+
+void ListVehiculos::addF(Vehiculo *v){
 
     Vehiculo *vehiculo = v;
     vehiculo->next = this->head;
@@ -40,7 +57,7 @@ void ListVehiculos::delete_first(){
         temp = head;
         head = temp->next;
         delete (temp);
-        cout << "Se elimono el primer vehiculo" << std::endl;
+        cout << "Se elimino el primer vehiculo" << std::endl;
     }
     this->size--;
 
