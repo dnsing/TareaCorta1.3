@@ -1,0 +1,3 @@
+/home/sing/Documents/Git/TareaCorta1.3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/sing/Documents/Git/TareaCorta1.3/cmake-build-debug/CMakeFiles/TareaCorta1_2.dir
+/home/sing/Documents/Git/TareaCorta1.3/cmake-build-debug/CMakeFiles/edit_cache.dir
