@@ -9,6 +9,12 @@ Procesos::Procesos(){
     size = 0;
 
 }
+
+/**
+ * @brief anade un proceso a la lista de procesos
+ * @param s tipo de proceso
+ * @param i duracion del proceso
+ */
 void Procesos::add(string s, int i){
     ProcesoSimple *proceso = new ProcesoSimple();
     proceso->tipoProceso = s;
@@ -27,6 +33,12 @@ void Procesos::add(string s, int i){
     }
 
 }
+
+/**
+ * @brief agrega un proceso al incio de la lista
+ * @param s tipo de proceso
+ * @param i duracion del proceso
+ */
 void Procesos::addF(string s, int i) {
 
     ProcesoSimple *proceso = new ProcesoSimple();
@@ -38,6 +50,9 @@ void Procesos::addF(string s, int i) {
 
 }
 
+/**
+ * @brief elimina el primer elemento de la lista de procesos
+ */
 void Procesos::deleteF(){
 
     ProcesoSimple *temp;
@@ -46,13 +61,16 @@ void Procesos::deleteF(){
     } else {
         temp = head;
         head = temp->next;
-        delete (temp);
+        free (temp);
         cout << "Se elimino el primer proceso" << endl;
     }
     this->size--;
 
 }
 
+/**
+ * @brief muestra el tipo y el tiempo de los procesos
+ */
 void Procesos::verProcesos() {
     ProcesoSimple *temp;
     temp = head;

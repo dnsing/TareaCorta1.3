@@ -16,8 +16,7 @@ public:
     Vehiculo *next;
 
     Vehiculo(int i);
-    Procesos * establecerOrden(int i);
-    void solicitarProceso();
+    Procesos *establecerOrden(int i);
 
 };
 

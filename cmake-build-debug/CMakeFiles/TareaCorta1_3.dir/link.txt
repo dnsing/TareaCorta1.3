@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/TareaCorta1_3.dir/main.cpp.o CMakeFiles/TareaCorta1_3.dir/Procesos.cpp.o CMakeFiles/TareaCorta1_3.dir/ListVehiculos.cpp.o CMakeFiles/TareaCorta1_3.dir/Vehiculo.cpp.o CMakeFiles/TareaCorta1_3.dir/Fabrica.cpp.o  -o TareaCorta1_3 

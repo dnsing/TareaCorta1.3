@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sing/Documents/Git/TareaCorta1.3/ListVehiculos.cpp
+ListVehiculos.h
+/home/sing/Documents/Git/TareaCorta1.3/ListVehiculos.h
+
+/home/sing/Documents/Git/TareaCorta1.3/ListVehiculos.h
+iostream
+-
+Vehiculo.h
+/home/sing/Documents/Git/TareaCorta1.3/Vehiculo.h
+
+/home/sing/Documents/Git/TareaCorta1.3/ProcesoSimple.h
+string
+-
+
+/home/sing/Documents/Git/TareaCorta1.3/Procesos.h
+iostream
+-
+ProcesoSimple.h
+/home/sing/Documents/Git/TareaCorta1.3/ProcesoSimple.h
+
+/home/sing/Documents/Git/TareaCorta1.3/Vehiculo.h
+iostream
+-
+Procesos.h
+/home/sing/Documents/Git/TareaCorta1.3/Procesos.h
+

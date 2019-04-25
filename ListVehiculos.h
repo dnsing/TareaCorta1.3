@@ -19,10 +19,6 @@ public:
     void move_first();
     void verProcesos();
 
-    Vehiculo *getHead() const;
-    void setHead(Vehiculo *head);
-
-
 };
 
 

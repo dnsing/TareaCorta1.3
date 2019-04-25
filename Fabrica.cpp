@@ -6,19 +6,19 @@
 
 using namespace std;
 Fabrica::Fabrica(){
-
     lineaProduccionGeneral =  new ListVehiculos();
-
-
-    lineaProduccion1 = new ListVehiculos();
-    lineaProduccion2 = new ListVehiculos();
-    lineaProduccion3 = new ListVehiculos();
-    lineaProduccion4 = new ListVehiculos();
-    lineaProduccion5 = new ListVehiculos();
-    lineaProduccion6 = new ListVehiculos();
     lineadeEspera = new ListVehiculos();
 }
 
+/**
+ * @brief se agrega en una lista los vehiculos para luego iniciar el proceso
+ * @param v vehiculo de tipo 1
+ * @param v1 vehiculo de tipo 2
+ * @param v2 vehiculo de tipo 3
+ * @param v3 vehiculo de tipo 4
+ * @param v4 vehiculo de tipo 5
+ * @param v5 vehiculo de tipo 6
+ */
 void Fabrica::lineaGeneral(Vehiculo *v, Vehiculo *v1, Vehiculo *v2, Vehiculo *v3, Vehiculo *v4, Vehiculo *v5) {
     this->lineaProduccionGeneral->add(v);
     this->lineaProduccionGeneral->add(v1);
@@ -27,14 +27,15 @@ void Fabrica::lineaGeneral(Vehiculo *v, Vehiculo *v1, Vehiculo *v2, Vehiculo *v3
     this->lineaProduccionGeneral->add(v4);
     this->lineaProduccionGeneral->add(v5);
 
-    //cout << lineaProduccionGeneral->head << endl;
 
     this->StartProceso();
-    //cout << lineaProduccionGeneral->head << endl;
 
 }
-//hacer lo mismo que sucede aqui, pero para cada uno de los carros
 //borrar el codigo comentado cuando considere que ya no lo necesito
+/**
+ * @brief se empieza a producir las lineas de proceso tomando en cuenta los vehiculos que se encuentran en la lista de linea de Produccion
+ * @return void
+ */
 void Fabrica::StartProceso(){
     if(lineaProduccionGeneral->head != NULL){
         lineaProduccionGeneral->last = lineaProduccionGeneral->head;
@@ -46,22 +47,23 @@ void Fabrica::StartProceso(){
 
     while (lineaProduccionGeneral->head != NULL) {
         cout << "ok" << endl;
-        if (lineaProduccionGeneral->getHead()->listaProcesos->head->tiempo != 0) {
-            cout << "Tipo de proceso: " << lineaProduccionGeneral->getHead()->listaProcesos->head->tipoProceso <<
-            " " << lineaProduccionGeneral->getHead()->listaProcesos->head->tiempo << endl;
-                lineaProduccionGeneral->getHead()->listaProcesos->head->tiempo--;
-        } else {
-            lineaProduccionGeneral->getHead()->listaProcesos->deleteF();
+        if (lineaProduccionGeneral->head->listaProcesos->head->tiempo != 0) {
+            cout << "Tipo de proceso: " << lineaProduccionGeneral->head->listaProcesos->head->tipoProceso <<
+            " " << lineaProduccionGeneral->head->listaProcesos->head->tiempo << endl;
+                lineaProduccionGeneral->head->listaProcesos->head->tiempo--;
+        }else{
+            lineaProduccionGeneral->head->listaProcesos->deleteF();
             if(lineaProduccionGeneral->head->listaProcesos->head == NULL){
                 cout << "listo" << endl;
                 lineaProduccionGeneral->delete_first();
             }else{
-                cout << "Tipo de proceso: " << lineaProduccionGeneral->getHead()->listaProcesos->head->tipoProceso <<
-                     " " << lineaProduccionGeneral->getHead()->listaProcesos->head->tiempo << endl;
-                lineaProduccionGeneral->getHead()->listaProcesos->head->tiempo--;
+                cout << "Tipo de proceso: " << lineaProduccionGeneral->head->listaProcesos->head->tipoProceso <<
+                     " " << lineaProduccionGeneral->head->listaProcesos->head->tiempo << endl;
+                lineaProduccionGeneral->head->listaProcesos->head->tiempo--;
             }
 
         }
+
         //lineaProduccionGeneral->verProcesos();
 
         lineaProduccionGeneral->head = lineaProduccionGeneral->head->next;
@@ -146,16 +148,19 @@ void Fabrica::agregarLinea(Vehiculo *v) {
 
 }*/
 
-void Fabrica::darPrioridad(ListVehiculos *lv, Vehiculo *v){
+/**
+ * @brief permite dar prioridad a las lineas de proceso que llegan, y agrega en una cola de espera a los procesos que se necesitan sacar
+ * @param listaVehiculo
+ * @param v vehiculo que se tiene que dar la prioridad
+ */
+void Fabrica::darPrioridad(ListVehiculos *listaVehiculo, Vehiculo *v){
 
-    Vehiculo *temp = lv->getHead();
+    Vehiculo *temp = listaVehiculo->head;
 
-    lv->move_first();
-    lv->addF(v);
+    listaVehiculo->move_first();
+    listaVehiculo->addF(v);
     this->lineadeEspera->addF(temp);
-    //lv->move_first();
-    //lv->addfirst(v);
-    cout << "Se ha realizado el cambio con éxito" << endl;
+    cout << "Se hizo el cambio con éxito" << endl;
 
 }
 

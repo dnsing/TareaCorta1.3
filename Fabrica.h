@@ -12,13 +12,6 @@ class Fabrica {
 
 public:
     ListVehiculos* lineaProduccionGeneral;
-
-    ListVehiculos *lineaProduccion1;
-    ListVehiculos *lineaProduccion2;
-    ListVehiculos *lineaProduccion3;
-    ListVehiculos *lineaProduccion4;
-    ListVehiculos *lineaProduccion5;
-    ListVehiculos *lineaProduccion6;
     ListVehiculos *lineadeEspera;
 
     Fabrica();

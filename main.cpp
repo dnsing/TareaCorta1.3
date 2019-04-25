@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Fabrica.h"
 int main() {
-    Fabrica *pd = new Fabrica();
+    Fabrica *fabrica = new Fabrica();
 
     Vehiculo *v = new Vehiculo(1);
     Vehiculo *v2 = new Vehiculo(2);
@@ -11,6 +11,6 @@ int main() {
     Vehiculo *v6 = new Vehiculo(6);
 
 
-    pd->lineaGeneral(v, v2, v3, v4, v5, v6);
+    fabrica->lineaGeneral(v, v2, v3, v4, v5, v6);
     return 0;
 }

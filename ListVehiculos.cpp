@@ -13,13 +13,10 @@ ListVehiculos::ListVehiculos(){
     size = 0;
 }
 
-Vehiculo *ListVehiculos::getHead() const {
-    return head;
-}
-
-void ListVehiculos::setHead(Vehiculo *head) {
-    ListVehiculos::head = head;
-};
+/**
+ * @brief agrega un vehiculo a la lista de vehiculos
+ * @param v vehiculo para agregar
+ */
 void ListVehiculos::add(Vehiculo *v){
     Vehiculo *vehiculo = v;
     vehiculo->next=NULL;
@@ -37,6 +34,10 @@ void ListVehiculos::add(Vehiculo *v){
 
 }
 
+/**
+ * @brief se anade un vehiculo al inicio de la lista de vehiculos
+ * @param v vehiculo para anadir
+ */
 void ListVehiculos::addF(Vehiculo *v){
 
     Vehiculo *vehiculo = v;
@@ -47,7 +48,9 @@ void ListVehiculos::addF(Vehiculo *v){
 
 };
 
-
+/**
+ * @brief elimina el vehiculo que se encuentra al principio de la lista
+ */
 void ListVehiculos::delete_first(){
 
     Vehiculo *temp;
@@ -56,29 +59,34 @@ void ListVehiculos::delete_first(){
     } else {
         temp = head;
         head = temp->next;
-        delete (temp);
+        free (temp);
         cout << "Se elimino el primer vehiculo" << std::endl;
     }
     this->size--;
 
 };
 
+/**
+ * @brief elimina vehiculos de la lista para darle prioridad a otro proceso
+ */
 void ListVehiculos::move_first(){
 
     Vehiculo *temp;
     if (head == NULL) {
         cout << "No hay elementos para eliminar." << endl;
     } else {
-        temp = this->getHead();
-        setHead(temp->next);
+        temp = this->head;
+        head = (temp->next);
         //delete (temp); no se si eliminarlo
-        cout << "Se elimono el primer vehiculo" << endl;
+        cout << "Se elimina el primer vehiculo" << endl;
     }
     this->size--;
 
 };
 
-
+/**
+ * @brief muestra los tipos de vehiculos y los procesos que tiene
+ */
 void ListVehiculos::verProcesos(){
 
     Vehiculo *temp;

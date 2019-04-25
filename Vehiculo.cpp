@@ -9,12 +9,12 @@ Vehiculo::Vehiculo(int i){
     listaProcesos = this->establecerOrden(i);
 }
 
-void Vehiculo::solicitarProceso(){
-
-
-}
-//implementar un addLast() para meter los datos a lo ultimo y no pase lo que pasa ahorita
-Procesos * Vehiculo::establecerOrden(int i) {
+/**
+ * @brief plantilla que permite asignarle a cada tipo de vehiculo sus procesos y la duracion de los mismos
+ * @param i tipo de vehiculo
+ * @return vehiculo
+ */
+Procesos *Vehiculo::establecerOrden(int i) {
 
     Procesos *temp = new Procesos;
 
